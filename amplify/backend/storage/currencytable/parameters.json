@@ -1,0 +1,5 @@
+{
+    "tableName": "currencytable",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

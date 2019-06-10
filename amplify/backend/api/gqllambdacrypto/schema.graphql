@@ -1,0 +1,17 @@
+type Coin {
+  id: String!
+  name: String
+  symbol: String
+  price_usd: String
+}
+
+type Query {
+  getCoins(
+    limit: Int
+    start: Int
+    ): [Coin] @function(name: "currencyfunction-${env}")
+}
+
+type Mutation {
+  createCoin(name: String! symbol: String! price_usd: String!): Coin @function(name: "currencyfunction-${env}")
+}

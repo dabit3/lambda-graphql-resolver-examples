@@ -1,0 +1,7 @@
+{
+    "tableName": "gqllambdadb",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "price",
+    "sortKeyType": "S"
+}

@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "storage": {
+            "currencytable": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,12 @@
+projects:
+  gqllambdacrypto:
+    schemaPath: amplify/backend/function/currencyfunction/src/src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
