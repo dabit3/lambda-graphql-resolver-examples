@@ -1,9 +1,5 @@
 {
 	"storage": {
-		"gqllambdadb": {
-			"service": "DynamoDB",
-			"providerPlugin": "awscloudformation"
-		},
 		"currencytable": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
