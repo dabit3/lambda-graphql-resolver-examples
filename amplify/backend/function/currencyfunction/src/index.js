@@ -1,9 +1,4 @@
-const AWS = require('aws-sdk')
 const axios = require('axios')
-const region = process.env.REGION
-
-AWS.config.update({ region })
-
 const getCoins = require('./getCoins')
 const createCoin = require('./createCoin')
 

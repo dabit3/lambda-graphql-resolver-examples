@@ -7,8 +7,6 @@ const params = {
   TableName: storageCurrencytableName
 }
 
-AWS.config.update({ region })
-
 function getCoins(callback) {
   docClient.scan(params, function(err, data) {
     if (err) {

@@ -4,8 +4,6 @@ const region = process.env.REGION
 const ddb_table_name = process.env.STORAGE_CURRENCYTABLE_NAME
 const docClient = new AWS.DynamoDB.DocumentClient({region})
 
-AWS.config.update({region: region});
-
 function write(params, event, callback){
   docClient.put(params, function(err, data) {
     if (err) {

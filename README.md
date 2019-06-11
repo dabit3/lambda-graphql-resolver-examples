@@ -49,11 +49,7 @@ The Function has two main features:
 
 ```javascript
 // index.js
-const AWS = require('aws-sdk')
 const axios = require('axios')
-const region = process.env.REGION
-
-AWS.config.update({ region })
 
 const getCoins = require('./getCoins')
 const createCoin = require('./createCoin')
@@ -94,8 +90,6 @@ const params = {
   TableName: storageCurrencytableName
 }
 
-AWS.config.update({ region })
-
 function getCoins(callback) {
   docClient.scan(params, function(err, data) {
     if (err) {
@@ -118,8 +112,6 @@ const uuid = require('uuid/v4')
 const region = process.env.REGION
 const ddb_table_name = process.env.STORAGE_CURRENCYTABLE_NAME
 const docClient = new AWS.DynamoDB.DocumentClient({region})
-
-AWS.config.update({region: region});
 
 function write(params, event, callback){
   docClient.put(params, function(err, data) {
