@@ -1,10 +1,11 @@
 const AWS = require('aws-sdk')
 const region = process.env.REGION
-var storageCurrencytableName = process.env.STORAGE_CURRENCYTABLE_NAME
+const storageCurrencytableName = process.env.STORAGE_CURRENCYTABLE_NAME
+const docClient = new AWS.DynamoDB.DocumentClient({region})
+
 const params = {
   TableName: storageCurrencytableName
 }
-var docClient = new AWS.DynamoDB.DocumentClient({region})
 
 AWS.config.update({ region })
 

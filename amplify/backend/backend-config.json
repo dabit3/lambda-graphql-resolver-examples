@@ -20,6 +20,11 @@
 					]
 				}
 			]
+		},
+		"testfunc": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true
 		}
 	},
 	"api": {

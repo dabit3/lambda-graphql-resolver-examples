@@ -52,15 +52,6 @@ The Function has two main features:
 
 ```javascript
 // index.js
-/* Amplify Params - DO NOT EDIT
-You can access the following resource attributes as environment variables from your Lambda function
-var environment = process.env.ENV
-var region = process.env.REGION
-var storageCurrencytableName = process.env.STORAGE_CURRENCYTABLE_NAME
-var storageCurrencytableArn = process.env.STORAGE_CURRENCYTABLE_ARN
-
-Amplify Params - DO NOT EDIT */
-
 const AWS = require('aws-sdk')
 const axios = require('axios')
 const region = process.env.REGION
@@ -99,11 +90,12 @@ exports.handler = function (event, _, callback) {
 // getCoins.js
 const AWS = require('aws-sdk')
 const region = process.env.REGION
-var storageCurrencytableName = process.env.STORAGE_CURRENCYTABLE_NAME
+const storageCurrencytableName = process.env.STORAGE_CURRENCYTABLE_NAME
+const docClient = new AWS.DynamoDB.DocumentClient({region})
+
 const params = {
   TableName: storageCurrencytableName
 }
-var docClient = new AWS.DynamoDB.DocumentClient({region})
 
 AWS.config.update({ region })
 
@@ -124,14 +116,13 @@ module.exports = getCoins
 
 ```javascript
 // createCoin.js
-var AWS = require('aws-sdk')
-var uuid = require('uuid/v4')
-var region = process.env.REGION
-var DBTable = process.env.STORAGE_CURRENCYTABLE_NAME
-AWS.config.update({region: region});
-var ddb_table_name = DBTable
+const AWS = require('aws-sdk')
+const uuid = require('uuid/v4')
+const region = process.env.REGION
+const ddb_table_name = process.env.STORAGE_CURRENCYTABLE_NAME
+const docClient = new AWS.DynamoDB.DocumentClient({region})
 
-var docClient = new AWS.DynamoDB.DocumentClient({region});
+AWS.config.update({region: region});
 
 function write(params, event, callback){
   docClient.put(params, function(err, data) {
@@ -148,7 +139,7 @@ function createCoin(event, callback) {
   var params = {
     TableName: ddb_table_name,
     Item: args
-  }
+  };
   
   if (Object.keys(event.arguments).length > 0) {
     write(params, event, callback)
