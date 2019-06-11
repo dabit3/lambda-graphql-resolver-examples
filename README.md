@@ -29,10 +29,7 @@ type Coin {
 }
 
 type Query {
-  getCoins(
-    limit: Int
-    start: Int
-    ): [Coin] @function(name: "currencyfunction-${env}")
+  getCoins(limit: Int start: Int): [Coin] @function(name: "currencyfunction-${env}")
 }
 
 type Mutation {
