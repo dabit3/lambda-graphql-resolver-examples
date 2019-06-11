@@ -18,7 +18,7 @@ Current Environment: local
 
 #### Schema
 
-This schema has 1 main type (`Coin`) as well as `Query` and a `Mutation` operation to interact with the type. The resolver for these operations are the Lambda function (`currencyfunction`).
+This schema has 1 main type (`Coin`) as well as `Query` and a `Mutation` operation to interact with the type. The resolver for these operations is the Lambda function (`currencyfunction`).
 
 ```graphql
 type Coin {
