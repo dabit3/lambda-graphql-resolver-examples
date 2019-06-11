@@ -77,7 +77,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "gql-lambda-resolvers-local-20190609130720-deployment",
-					"S3Key": "amplify-builds/currencyfunction-1560185185-latest-build.zip"
+					"S3Key": "amplify-builds/currencyfunction-1560212146-latest-build.zip"
 				}
 			}
 		},
