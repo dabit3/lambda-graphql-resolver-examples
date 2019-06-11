@@ -1,8 +1,8 @@
 type Coin {
   id: String!
-  name: String
-  symbol: String
-  price_usd: String
+  name: String!
+  symbol: String!
+  price_usd: String!
 }
 
 type Query {

@@ -23,9 +23,9 @@ This schema has 1 main type (`Coin`) as well as `Query` and a `Mutation` operati
 ```graphql
 type Coin {
   id: String!
-  name: String
-  symbol: String
-  price_usd: String
+  name: String!
+  symbol: String!
+  price_usd: String!
 }
 
 type Query {

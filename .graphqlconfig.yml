@@ -1,6 +1,6 @@
 projects:
   gqllambdacrypto:
-    schemaPath: amplify/backend/function/currencyfunction/src/src/graphql/schema.json
+    schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
     excludes:
